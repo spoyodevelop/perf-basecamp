@@ -6,34 +6,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
+  devtool: 'source-map',
   entry: './src/index.tsx',
   resolve: { extensions: ['.ts', '.tsx', '.js', '.jsx'] },
-  output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, '/dist'),
-    clean: true
-  },
-  devServer: {
-    hot: true,
-    open: true,
-    historyApiFallback: true
-  },
-  devtool: 'source-map',
-  optimization: {
-    minimizer: [`...`, new CssMinimizerPlugin()]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html'
-    }),
-    new CopyWebpackPlugin({
-      patterns: [{ from: './public', to: './public' }]
-    }),
-    new Dotenv(),
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css'
-    })
-  ],
   module: {
     rules: [
       {
@@ -58,5 +33,31 @@ module.exports = {
         }
       }
     ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: './public', to: './public' }]
+    }),
+    new Dotenv(),
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash].css'
+    })
+  ],
+  output: {
+    filename: 'bundle.js',
+    path: path.join(__dirname, '/dist'),
+    clean: true
+  },
+  devServer: {
+    hot: true,
+    open: true,
+    historyApiFallback: true
+  },
+
+  optimization: {
+    minimizer: [`...`, new CssMinimizerPlugin()]
   }
 };

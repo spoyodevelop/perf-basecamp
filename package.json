@@ -71,6 +71,5 @@
     "plugins": [
       "@babel/plugin-transform-runtime"
     ]
-  },
-  "sideEffects": false
+  }
 }

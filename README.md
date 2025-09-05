@@ -110,6 +110,10 @@ Memegle 프로젝트는 곳곳에 성능을 저하시키는 요소들로 가득�
 - [x] Frame Drop이 일어나지 않아야 한다.
   - (Chrome DevTools 기준) Partially Presented Frame 역시 최소로 발생해야 한다.
 
+#### 5 list virtualization 직접 구현해보기
+
+- [x] 도움말 패널 추가 최적화
+
 도구
 
 - Chrome DevTools > Performance

@@ -45,13 +45,15 @@ Memegle 프로젝트는 곳곳에 성능을 저하시키는 요소들로 가득�
 측정 환경에 따라 조금씩 다를 수도 있으니, 참고 기준으로만 삼아주세요  
 이 수치를 완벽히 맞추기 위한 미션이 아니라, 개선 방법들을 한번씩 직접 경험해보기 위한 미션이랍니다. 🙂
 
-- Lighthouse `95점` 이상
-- Home 페이지에서 불러오는 스크립트 리소스 크기 `< 60kb`
-- 히어로 이미지 크기 `< 120kb`
-- `프랑스 파리`에서 `Fast 3G` 환경으로 접속했을 때 Home 두 번째 이후 로드시 LCP < 1.2s
-  - WebPageTest에서 Paris - EC2 Chrome CPU 6x slowdown Network Fast 3G 환경 기준으로 확인
-- Chrome CPU 6x slowdown Network Fast 3G 환경에서 화면 버벅임 최소화
-  - Dropped Frame 없음. Partially Presented Frame 최소화.
+- [x] Lighthouse performance 95점 이상 (99점)
+- [x] Home 페이지에서 불러오는 스크립트 리소스 크기 < 60kb (54.7 kB)
+- [x] 히어로 이미지 크기 < 120kb (50.2 kB/화질구지)
+      프랑스 파리에서 Fast 3G 환경으로 접속했을 때
+- [x] Home 첫 번째 로드시 LCP < 2.5s (1.704s)
+- [x] Home 두 번째 이후 로드시 LCP < 1.5s (0.309s)
+      cpu slowdown 6x 기준 화면 버벅임 최소화
+- [x] Dropped Frame 없음
+- [x] Partially Presented Frame 최소화
 
 ### 작업 목록
 
@@ -87,7 +89,7 @@ Memegle 프로젝트는 곳곳에 성능을 저하시키는 요소들로 가득�
 
 #### 3 같은 건 매번 새로 요청하지 않기
 
-- [∆] CDN을 적용하고, 한 번 요청한 리소스는 CDN 캐시에서 불러와야 한다.
+- [x] CDN을 적용하고, 한 번 요청한 리소스는 CDN 캐시에서 불러와야 한다.
 - [x] GIPHY의 trending API를 Search 페이지에 들어올 때마다 새로 요청하지 않아야 한다.
 
 도구
